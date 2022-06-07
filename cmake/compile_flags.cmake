@@ -73,7 +73,7 @@ function(set_cpp_standard target_name)
     get_property(cpp_standard GLOBAL PROPERTY cpp_standard)
 
     if(NOT CPP_STANDARD AND NOT cpp_standard)
-        set(cpp_standard 14)
+        set(cpp_standard 17)
         message(STATUS "You can set the C++ standard by defining CPP_STANDARD")
     elseif(NOT cpp_standard)
         set(cpp_standard ${CPP_STANDARD})

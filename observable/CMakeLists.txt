@@ -2,6 +2,7 @@ add_library(observable INTERFACE)
 
 add_custom_target(observable_headers # Just to generate a project in IDEs.
     SOURCES
+	    include/observable/collection.hpp
         include/observable/observable.hpp
         include/observable/observe.hpp
         include/observable/subject.hpp

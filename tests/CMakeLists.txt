@@ -10,6 +10,7 @@ add_executable(tests
     src/expressions/math.cpp
     src/expressions/operators.cpp
     src/expressions/tree.cpp
+	src/collection.cpp
     src/infinite_subscription.cpp
     src/observe.cpp
     src/shared_subscription.cpp

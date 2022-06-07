@@ -229,7 +229,7 @@ public:
     subject<void(), value<ValueType>> destroyed;
 
     //! Destructor.
-    ~value() { destroyed.notify(); }
+    virtual ~value() { destroyed.notify(); }
 
 public:
     //! Observable values are **not** copy-constructible.
@@ -287,7 +287,7 @@ public:
         return *this;
     }
 
-private:
+protected:
     template <typename Callable>
     auto subscribe_impl(Callable && observer) const ->
         std::enable_if_t<detail::is_compatible_with_subject<Callable, void_subject>::value &&
@@ -332,7 +332,7 @@ private:
         value_observers_.notify(value_);
     }
 
-private:
+protected:
     ValueType value_;
 
     std::function<bool(ValueType const &, ValueType const &)> eq_ {
